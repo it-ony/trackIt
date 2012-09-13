@@ -1,0 +1,11 @@
+<Server xmlns="srv.core"
+        xmlns:handler="srv.handler"
+        xmlns:appData="app.data">
+
+    <Handlers>
+        <handler:RestHandler route="api">
+            <appData:ResourceConfiguration />
+        </handler:RestHandler>
+    </Handlers>
+
+</Server>
