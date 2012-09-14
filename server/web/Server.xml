@@ -1,6 +1,10 @@
 <Server xmlns="srv.core"
         xmlns:handler="srv.handler"
-        xmlns:appData="app.data">
+        xmlns:appData="app.data" xmlns:endpoint="srv.endpoint">
+
+    <Endpoints>
+        <endpoint:HttpEndPoint port="8000" />
+    </Endpoints>
 
     <Handlers>
         <handler:RestHandler route="api">
