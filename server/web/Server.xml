@@ -2,9 +2,9 @@
         xmlns:handler="srv.handler"
         xmlns:appData="app.data" xmlns:endpoint="srv.endpoint">
 
-    <Endpoints>
+    <EndPoints>
         <endpoint:HttpEndPoint port="8000" />
-    </Endpoints>
+    </EndPoints>
 
     <Handlers>
         <handler:RestHandler route="api">
