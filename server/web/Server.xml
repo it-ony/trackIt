@@ -7,7 +7,7 @@
     </EndPoints>
 
     <Handlers>
-        <handler:RestHandler route="api">
+        <handler:RestHandler path="/api">
             <appData:ResourceConfiguration />
         </handler:RestHandler>
     </Handlers>
