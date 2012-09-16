@@ -1,6 +1,6 @@
 <Server xmlns="srv.core"
         xmlns:handler="srv.handler"
-        xmlns:appData="app.data" xmlns:endpoint="srv.endpoint">
+        xmlns:appData="app.data" xmlns:endpoint="srv.endpoint" xmlns:data="srv.data">
 
     <EndPoints>
         <endpoint:HttpEndPoint port="8000" />
@@ -8,6 +8,7 @@
 
     <Handlers>
         <handler:RestHandler path="/api">
+            <data:MongoDataSource host="127.0.0.1" database="trackit"/>
             <appData:ResourceConfiguration />
         </handler:RestHandler>
     </Handlers>
