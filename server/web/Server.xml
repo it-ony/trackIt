@@ -1,15 +1,20 @@
 <Server xmlns="srv.core"
         xmlns:handler="srv.handler"
-        xmlns:appData="app.data" xmlns:endpoint="srv.endpoint" xmlns:data="srv.data">
+        xmlns:appData="app.data" xmlns:endpoint="srv.endpoint" xmlns:data="srv.data" xmlns:conf="js.conf">
 
     <EndPoints>
-        <endpoint:HttpEndPoint port="8000" />
+        <endpoint:HttpEndPoint port="8000"/>
     </EndPoints>
 
     <Handlers>
         <handler:RestHandler path="/api">
-            <data:MongoDataSource host="127.0.0.1" database="trackit"/>
-            <appData:ResourceConfiguration />
+            <data:MongoDataSource host="127.0.0.1" database="trackit">
+                <conf:DataSource>
+                    <conf:Resource modelClassName="app.model.Ticket" collection="ticket" />
+                    <conf:Resource modelClassName="app.model.Project" collection="project"/>
+                </conf:DataSource>
+            </data:MongoDataSource>
+            <appData:ResourceConfiguration/>
         </handler:RestHandler>
     </Handlers>
 
