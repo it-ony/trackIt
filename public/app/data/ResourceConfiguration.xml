@@ -1,8 +1,8 @@
 <conf:DataSource xmlns:conf="js.conf">
 
-    <conf:Resource path="organisations" modelClassName="app.model.Organisation" resourceClassName="web.resource.OrganisationResource">
-        <conf:Resource path="projects" modelClassName="app.model.Project" resourceClassName="web.resource.ProjectResource"/>
-        <conf:Resource path="ticket" modelClassName="app.model.Ticket" resourceClassName="web.resource.TicketResource" />
+    <conf:Resource path="organisations" modelClassName="app.model.Organisation">
+        <conf:Resource path="projects" modelClassName="app.model.Project"/>
+        <conf:Resource path="ticket" modelClassName="app.model.Ticket" />
     </conf:Resource>
 
 </conf:DataSource>
