@@ -16,6 +16,7 @@
             </data:MongoDataSource>
             <appData:ResourceConfiguration/>
         </handler:RestHandler>
+        <handler:StaticFileHandler documentRoot="../public"/>
     </Handlers>
 
 </Server>
