@@ -1,7 +1,28 @@
 <?xml version="1.0"?>
 <app:TrackItClass xmlns="http://www.w3.org/1999/xhtml"
-               xmlns:js="js.core" xmlns:ui="js.ui" xmlns:app="app">
+               xmlns:js="js.core" xmlns:ui="js.ui" xmlns:app="app" xmlns:field="js.ui.field" xmlns:data="js.data" xmlns:appData="app.data">
+
+    <js:Injection cid="injection">
+        <data:RestDataSource cid="api" gateway="api" endPoint="http://localhost:8000/api">
+            <appData:ResourceConfiguration/>
+        </data:RestDataSource>
+    </js:Injection>
+
     <div class="container">
-        Your Application {appName} is running!
+        <div>
+            <form onsubmit="_handleProjectSubmit" action="">
+                <field:Text label="Name" value="{{project.name}}" />
+
+                <div>
+                    <ui:Button label="save" type="submit" tagName="button"/>
+                </div>
+            </form>
+        </div>
+        <hr/>
+        <ui:ItemsView items="{projects}" itemKey="project">
+            <li>
+                {$project.name}
+            </li>
+        </ui:ItemsView>
     </div>
 </app:TrackItClass>

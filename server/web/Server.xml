@@ -8,7 +8,7 @@
 
     <Handlers>
         <handler:RestHandler path="/api">
-            <data:MongoDataSource host="127.0.0.1" database="trackit">
+            <data:MongoDataSource database="trackit">
                 <conf:DataSource>
                     <conf:Resource modelClassName="app.model.Ticket" collection="ticket" />
                     <conf:Resource modelClassName="app.model.Project" collection="project"/>
