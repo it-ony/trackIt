@@ -7,6 +7,7 @@
     </EndPoints>
 
     <Handlers>
+        <handler:NodeRenderingHandler application="app/TrackIt.xml"/>
         <handler:RestHandler path="/api">
             <data:MongoDataSource database="trackit">
                 <conf:DataSource>
@@ -16,7 +17,7 @@
             </data:MongoDataSource>
             <appData:ResourceConfiguration/>
         </handler:RestHandler>
-        <handler:StaticFileHandler documentRoot="../public"/>
+        <handler:StaticFileHandler />
     </Handlers>
 
 </Server>
