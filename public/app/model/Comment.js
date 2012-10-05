@@ -1,4 +1,4 @@
-define(['js/data/Model', 'js/data/validator/RegExValidator'], function(Model, RegExValidator) {
+define(['js/data/Model', 'js/data/validator/EmailValidator'], function(Model, EmailValidator) {
     return Model.inherit('app.model.Comment', {
         defaults: {
             message: ''
@@ -8,9 +8,9 @@ define(['js/data/Model', 'js/data/validator/RegExValidator'], function(Model, Re
             created: Date
         },
         validators: [
-            new RegExValidator({
+            new EmailValidator({
                 field: 'message',
-                regEx: /\be(\w*)s\b/
+                errorMessage: ''
             })
         ]
     })
