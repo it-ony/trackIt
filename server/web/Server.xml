@@ -13,6 +13,9 @@
                 <conf:DataSource>
                     <conf:Resource modelClassName="app.model.Ticket" collection="ticket" />
                     <conf:Resource modelClassName="app.model.Project" collection="project"/>
+                    <conf:Resource modelClassName="app.model.User" collection="user"/>
+                    <conf:Resource modelClassName="app.model.Watcher" collection="watcher"/>
+                    <conf:Resource modelClassName="app.model.Comment" collection="comment"/>
                 </conf:DataSource>
             </data:MongoDataSource>
             <appData:ResourceConfiguration/>

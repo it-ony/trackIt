@@ -2,7 +2,11 @@
 
     <!--<conf:Resource path="organisations" modelClassName="app.model.Organisation">-->
         <conf:Resource path="projects" modelClassName="app.model.Project"/>
-        <conf:Resource path="ticket" modelClassName="app.model.Ticket" />
+        <conf:Resource path="users" modelClassName="app.model.User"/>
+        <conf:Resource path="tickets" modelClassName="app.model.Ticket" >
+            <conf:Resource path="comments" modelClassName="app.model.Comment"/>
+            <conf:Resource path="watchers" modelClassName="app.model.Watcher"/>
+        </conf:Resource>
     <!--</conf:Resource>-->
 
 </conf:DataSource>

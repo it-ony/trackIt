@@ -9,20 +9,86 @@
     </js:Injection>
 
     <div class="container">
-        <div>
-            <form onsubmit="_handleProjectSubmit" action="">
-                <field:Text label="Name" value="{{project.name}}" />
+        <div class="row">
+            <div class="span3">
+                <form onsubmit="_handleProjectSubmit" action="">
+                    <field:Text label="Name" value="{{project.name}}"/>
 
+                    <div>
+                        <ui:Button label="save" type="submit" tagName="button"/>
+                    </div>
+                </form>
+                <hr/>
+                <ui:SelectionView items="{projects}" itemKey="project" tagName="ul" class="nav nav-list" selectedItem="{{selectedProject}}">
+                    <js:Template name="item">
+                        <li>
+                            <a href="#">{$project.name}</a>
+                            <!--<form onsubmit="_handleSave">-->
+                                <!--<input type="text" value="{{$project.name}}"/>-->
+                            <!--</form>-->
+                        </li>
+                    </js:Template>
+                </ui:SelectionView>
+            </div>
+            <div class="span4">
+                <form onsubmit="_handleSaveTicket" action="">
+                    <field:Text label="Subject" value="{{ticket.subject}}"/>
+                    <field:Text label="Description" value="{{ticket.description}}"/>
+                    <select items="{projects}" itemKey="project" selectedItem="{{ticket.project}}">
+                        <option>
+                            Select Project ...
+                        </option>
+                        <js:Template name="item">
+                            <option>
+                                {$project.name}
+                            </option>
+                        </js:Template>
+                    </select>
+                    <div>
+                        <ui:Button label="save" type="submit" tagName="button"/>
+                    </div>
+                </form>
+                <hr/>
+                <ui:SelectionView items="{tickets}" class="nav nav-list" itemKey="ticket" selectedItem="{{selectedTicket}}" tagName="ul">
+                    <js:Template name="item">
+                        <li>
+                            <a href="#">
+                                {$ticket.subject}
+                            </a>
+                        </li>
+                    </js:Template>
+                </ui:SelectionView>
+            </div>
+            <div class="span5" visible="{selectedTicket}">
+                <h3>Ticket</h3>
                 <div>
-                    <ui:Button label="save" type="submit" tagName="button"/>
+                    {selectedTicket.subject}
                 </div>
-            </form>
+                <div>
+                    {selectedTicket.description}
+                </div>
+                <div>
+                    {selectedTicket.project.name}
+                </div>
+                <hr/>
+                <h3>Comments</h3>
+                <div>
+                    <form onsubmit="_handleSaveComment" action="">
+                        Write a comment:
+                        <input type="text" value="{{message}}"/>
+                    </form>
+                </div>
+                <ui:ItemsView items="{selectedTicket.comments}" itemKey="comment">
+                    <form onsubmit="_handleMessage" action="">
+                        <span>{$comment.created}</span>
+
+                        <input type="text" value="{{$comment.message}}" />
+                        <a onclick="_deleteMessage">x</a>
+                        <div>Errors: {$comment.errors('message').message}</div>
+                    </form>
+                </ui:ItemsView>
+            </div>
         </div>
-        <hr/>
-        <ui:ItemsView items="{projects}" itemKey="project">
-            <li>
-                {$project.name}
-            </li>
-        </ui:ItemsView>
+
     </div>
 </app:TrackItClass>
