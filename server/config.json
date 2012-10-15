@@ -1,7 +1,7 @@
 {"xamlClasses": ["app/data/ResourceConfiguration", "app/TrackIt", "js/ui/ButtonGroup", "js/ui/Checkbox", "js/ui/DataGrid", "js/ui/DataGridColumn", "js/ui/DataGridItemsView", "js/ui/Dialog", "js/ui/field/Password", "js/ui/field/RadioGroup", "js/ui/field/Text", "js/ui/Field", "js/ui/Link", "js/ui/MenuButton", "js/ui/Radio", "js/ui/Scrollable", "js/ui/ScrollView", "js/ui/SplitButton", "js/ui/TabView", "js/ui/TileList", "web/Server"], "namespaceMap": null, "rewriteMap": null, "paths": {
-    "xaml": "js/plugins/xaml",
-    "json": "js/plugins/json",
-    "raw": "js/plugins/raw",
+    "xaml": "js/plugin/xaml",
+    "json": "js/plugin/json",
+    "raw": "js/plugin/raw",
     "flow": "js/lib/flow",
     "inherit": "js/lib/inherit",
     "underscore": "js/lib/underscore",
