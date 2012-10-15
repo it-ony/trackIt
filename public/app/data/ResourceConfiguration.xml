@@ -1,12 +1,12 @@
-<conf:DataSource xmlns:conf="js.conf">
+<conf:DataSourceConfiguration xmlns:conf="js.conf">
 
-    <!--<conf:Resource path="organisations" modelClassName="app.model.Organisation">-->
-        <conf:Resource path="projects" modelClassName="app.model.Project"/>
-        <conf:Resource path="users" modelClassName="app.model.User"/>
-        <conf:Resource path="tickets" modelClassName="app.model.Ticket" >
-            <conf:Resource path="comments" modelClassName="app.model.Comment"/>
-            <conf:Resource path="watchers" modelClassName="app.model.Watcher"/>
-        </conf:Resource>
-    <!--</conf:Resource>-->
+    <!--<conf:ResourceConfiguration path="organisations" modelClassName="app.model.Organisation">-->
+        <conf:ResourceConfiguration path="projects" modelClassName="app.model.Project"/>
+        <conf:ResourceConfiguration path="users" modelClassName="app.model.User"/>
+        <conf:ResourceConfiguration path="tickets" modelClassName="app.model.Ticket" >
+            <conf:ResourceConfiguration path="comments" modelClassName="app.model.Comment"/>
+            <conf:ResourceConfiguration path="watchers" modelClassName="app.model.Watcher"/>
+        </conf:ResourceConfiguration>
+    <!--</conf:ResourceConfiguration>-->
 
-</conf:DataSource>
+</conf:DataSourceConfiguration>

@@ -10,13 +10,13 @@
         <handler:NodeRenderingHandler application="app/TrackIt.xml"/>
         <handler:RestHandler path="/api">
             <data:MongoDataSource database="trackit">
-                <conf:DataSource>
-                    <conf:Resource modelClassName="app.model.Ticket" collection="ticket" />
-                    <conf:Resource modelClassName="app.model.Project" collection="project"/>
-                    <conf:Resource modelClassName="app.model.User" collection="user"/>
-                    <conf:Resource modelClassName="app.model.Watcher" collection="watcher"/>
-                    <conf:Resource modelClassName="app.model.Comment" collection="comment"/>
-                </conf:DataSource>
+                <conf:DataSourceConfiguration>
+                    <conf:ResourceConfiguration modelClassName="app.model.Ticket" collection="ticket" />
+                    <conf:ResourceConfiguration modelClassName="app.model.Project" collection="project"/>
+                    <conf:ResourceConfiguration modelClassName="app.model.User" collection="user"/>
+                    <conf:ResourceConfiguration modelClassName="app.model.Watcher" collection="watcher"/>
+                    <conf:ResourceConfiguration modelClassName="app.model.Comment" collection="comment"/>
+                </conf:DataSourceConfiguration>
             </data:MongoDataSource>
             <appData:ResourceConfiguration/>
         </handler:RestHandler>
