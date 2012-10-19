@@ -105,8 +105,10 @@ define(
             _handleMessage: function(e){
                 var message = e.target.find('$comment');
                 if(message){
-                    message.validate();
-                    // message.save();
+                    message.validate(function(err){
+                        console.log(err);
+                    });
+//                    this.log("is Valid : ", message.isValid());
                 }
 
                 e.preventDefault();
